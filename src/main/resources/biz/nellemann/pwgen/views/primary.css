@@ -1,0 +1,41 @@
+.view {
+
+}
+
+.section {
+    -fx-padding: 1.5em;
+    -fx-min-width: 300px;
+    -fx-pref-width: Infinity;
+    -fx-max-width: Infinity;
+    -fx-fill-width: true;
+    /*-fx-vgrow-policy: always;*/
+}
+
+.section Label {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.section Spinner {
+    -fx-font-size: 1.5em;
+    -fx-max-width: Infinity;
+    /*-fx-hgrow-policy: always;*/
+    /*-fx-fill-width: true;*/
+}
+
+.section TextField {
+    -fx-font-size: 1.5em;
+    -fx-hgrow-policy: always;
+    -fx-max-width: Infinity;
+}
+
+.grow {
+    -fx-vgrow-policy: always;
+    -fx-hgrow-policy: always;
+}
+
+.big-button {
+    -fx-pref-width: Infinity;
+    -fx-max-width: Infinity;
+    -fx-font-size: 1.5em;
+}
