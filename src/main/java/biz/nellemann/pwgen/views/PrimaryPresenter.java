@@ -8,11 +8,10 @@ import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import biz.nellemann.pwgen.PasswordApplication;
 import java.util.ResourceBundle;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 
@@ -28,7 +27,7 @@ public class PrimaryPresenter extends GluonPresenter<PasswordApplication> {
     public CheckBox checkSymbols;
 
     @FXML
-    public Spinner<Integer> spinnerLength;
+    public Slider sliderLength;
 
     @FXML
     private View primary;
@@ -37,14 +36,14 @@ public class PrimaryPresenter extends GluonPresenter<PasswordApplication> {
     private TextField fieldResult;
 
     @FXML
+    private Label labelLength;
+
+    @FXML
     private ResourceBundle resources;
 
 
     private final StringProperty passwordValueProperty = new SimpleStringProperty();
-
-    private final ObjectProperty<Integer> objectProp = new SimpleObjectProperty<>(12);
-    private final IntegerProperty passwordLengthProperty = IntegerProperty.integerProperty(objectProp);
-
+    private final IntegerProperty passwordLengthProperty = new SimpleIntegerProperty();
     private final BooleanProperty checkCapitalsProperty = new SimpleBooleanProperty(false);
     private final BooleanProperty checkNumbersProperty = new SimpleBooleanProperty(false);
     private final BooleanProperty checkSymbolsProperty = new SimpleBooleanProperty(false);
@@ -57,7 +56,8 @@ public class PrimaryPresenter extends GluonPresenter<PasswordApplication> {
         checkNumbersProperty.bindBidirectional(checkNumbers.selectedProperty());
         checkSymbolsProperty.bindBidirectional(checkSymbols.selectedProperty());
         passwordValueProperty.bindBidirectional(fieldResult.textProperty());
-        spinnerLength.getValueFactory().valueProperty().bindBidirectional(objectProp);
+        passwordLengthProperty.bindBidirectional(sliderLength.valueProperty());
+        labelLength.textProperty().bind(Bindings.format("%.0f", sliderLength.valueProperty()));
 
         primary.showingProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue) {

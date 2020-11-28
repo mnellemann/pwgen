@@ -11,7 +11,7 @@
     /*-fx-vgrow-policy: always;*/
 }
 
-.section Label {
+.label-title {
     -fx-font-size: 1.5em;
     -fx-font-weight: bold;
 }
@@ -27,6 +27,7 @@
     -fx-font-size: 1.5em;
     -fx-hgrow-policy: always;
     -fx-max-width: Infinity;
+
 }
 
 .grow {

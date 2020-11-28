@@ -28,7 +28,7 @@ javafx {
 
 gluonClient {
     // target = 'ios' // Uncomment to enable iOS
-    // target = 'android' // Uncomment to enable Android
+    //target = 'android' // Uncomment to enable Android
     attachConfig {
         version = "4.0.10"
         services 'display', 'lifecycle', 'statusbar', 'storage'
