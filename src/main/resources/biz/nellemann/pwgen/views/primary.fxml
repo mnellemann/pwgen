@@ -39,7 +39,7 @@
    <bottom>
       <VBox maxHeight="-Infinity" spacing="15.0" BorderPane.alignment="CENTER">
          <HBox styleClass="section">
-            <TextField fx:id="fieldResult" HBox.hgrow="ALWAYS">
+            <TextField fx:id="fieldResult" HBox.hgrow="ALWAYS"/>
             <Button mnemonicParsing="false" onAction="#buttonCopy">
                <graphic>
                   <Icon content="CONTENT_COPY" />
