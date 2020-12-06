@@ -27,10 +27,11 @@ javafx {
 }
 
 gluonClient {
-    // target = 'ios' // Uncomment to enable iOS
+    //target = 'ios' // Uncomment to enable iOS
     //target = 'android' // Uncomment to enable Android
     attachConfig {
         version = "4.0.10"
-        services 'display', 'lifecycle', 'statusbar', 'storage'
+        services 'display', 'lifecycle', 'statusbar', 'storage', 'browser'
     }
+    graalvmHome = "/home/mark/.sdkman/candidates/java/20.3.0.r11-grl/"
 }
